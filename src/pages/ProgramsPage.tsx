@@ -34,7 +34,7 @@ const primaryPrograms = [
     description: 'An elite online debate competition challenging young minds to engage with pressing social, ethical, and technological motions.',
     image: '/tark_vyuh.png', 
     icon: MessageSquare,
-    formUrl: 'https://forms.google.com/...YOUR_TARK_VYUH_FORM_ID...', // Replace with your actual Google Form URL
+    formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfh2d1WpKQEnQwXHQTf-fHPQCIO1ZU9pLhfl_e5xCwrjAw19Q/viewform', // Replace with your actual Google Form URL
     buttonText: 'Registration Open',
     status: true,
     details: {

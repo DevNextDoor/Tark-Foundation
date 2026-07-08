@@ -70,7 +70,7 @@ export const Navbar = () => {
               <a href="#" className="hover:opacity-80 transition-opacity"><Facebook className="w-3.5 h-3.5" /></a>
               <a href="#" className="hover:opacity-80 transition-opacity"><Twitter className="w-3.5 h-3.5" /></a>
               <a href="#" className="hover:opacity-80 transition-opacity"><Linkedin className="w-3.5 h-3.5" /></a>
-              <a href="#" className="hover:opacity-80 transition-opacity"><Instagram className="w-3.5 h-3.5" /></a>
+              <a href="https://www.instagram.com/tarkfoundation.in/" className="hover:opacity-80 transition-opacity"><Instagram className="w-3.5 h-3.5" /></a>
               <a href="#" className="hover:opacity-80 transition-opacity"><Youtube className="w-3.5 h-3.5" /></a>
             </div>
           </div>
