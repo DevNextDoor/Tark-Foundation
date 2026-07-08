@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Landmark, MessageSquare, Plus, X, ArrowLeft, Sparkles, HelpCircle, ExternalLink } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 // Unified error-proof data structure with custom registration links
 const primaryPrograms = [
@@ -82,7 +83,9 @@ const primaryPrograms = [
 ];
 
 export const ProgramsPage = () => {
-  const [activeModal, setActiveModal] = useState(null);
+  const location = useLocation();
+  const [activeModal, setActiveModal] = useState<(typeof primaryPrograms)[number] | null>(null);
+  const [highlightedProgramId, setHighlightedProgramId] = useState<string | null>(null);
 
   useEffect(() => {
     if (activeModal) {
@@ -92,6 +95,21 @@ export const ProgramsPage = () => {
     }
     return () => { document.body.style.overflow = 'unset'; };
   }, [activeModal]);
+
+  useEffect(() => {
+    const programId = location.state?.openProgramId;
+    if (programId) {
+      const selectedProgram = primaryPrograms.find((program) => program.id === programId);
+      if (selectedProgram) {
+        setHighlightedProgramId(programId);
+        setActiveModal(selectedProgram);
+        setTimeout(() => {
+          const element = document.getElementById(programId);
+          element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 250);
+      }
+    }
+  }, [location.state?.openProgramId]);
 
   return (
     <section className="min-h-screen bg-tark-navy text-white py-16 px-6 md:px-12 relative overflow-x-hidden">
@@ -125,11 +143,15 @@ export const ProgramsPage = () => {
             return (
               <motion.div
                 key={program.id}
+                id={program.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                onClick={() => setActiveModal(program)}
-                className="group cursor-pointer bg-[#0f1e36] hover:bg-[#132542] rounded-3xl p-6 border border-white/5 hover:border-tark-gold/30 transition-all duration-300 flex flex-col justify-between shadow-xl relative overflow-hidden"
+                onClick={() => {
+                  setHighlightedProgramId(program.id);
+                  setActiveModal(program);
+                }}
+                className={`group cursor-pointer bg-[#0f1e36] hover:bg-[#132542] rounded-3xl p-6 border transition-all duration-300 flex flex-col justify-between shadow-xl relative overflow-hidden ${highlightedProgramId === program.id ? 'border-tark-gold/50 ring-2 ring-tark-gold/20' : 'border-white/5 hover:border-tark-gold/30'}`}
               >
                 <div>
                   {/* Media Mask */}

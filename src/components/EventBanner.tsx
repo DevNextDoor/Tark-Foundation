@@ -17,14 +17,14 @@ export const EventBanner = () => {
   }, []);
 
   const handleNavigateToEvent = () => {
-    navigate('/programs');
+    setIsMinimized(true);
+    navigate('/programs', { state: { openProgramId: 'tark-vyuh' } });
     setTimeout(() => {
-      const program = document.querySelector('[id*="tark-vyuh"]') || 
-                      Array.from(document.querySelectorAll('h3')).find(el => el.textContent.includes('TARK Vyuh'));
+      const program = document.getElementById('tark-vyuh');
       if (program) {
         program.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
-    }, 500);
+    }, 600);
   };
 
   // If the user completely closes it, remove from DOM
