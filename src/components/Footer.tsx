@@ -20,14 +20,14 @@ export const Footer = () => {
           <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-tark-gold mb-4">Navigation</h4>
             <div className="grid grid-cols-2 gap-x-8 gap-y-2.5 text-sm text-gray-400 text-center lg:text-left">
-              <a href="#" className="hover:text-tark-gold transition-colors">Home</a>
-              <a href="#about" className="hover:text-tark-gold transition-colors">About</a>
-              <a href="#programs" className="hover:text-tark-gold transition-colors">Programs</a>
-              <a href="#journey" className="hover:text-tark-gold transition-colors">Events</a>
-              <a href="#impact" className="hover:text-tark-gold transition-colors">Impact</a>
-              <a href="#team" className="hover:text-tark-gold transition-colors">Team</a>
-              <a href="#contact" className="hover:text-tark-gold transition-colors">Contact</a>
-              <a href="#contact" className="hover:text-tark-gold transition-colors">Become a Member</a>
+              <a href="#/" className="hover:text-tark-gold transition-colors">Home</a>
+              <a href="#/origin" className="hover:text-tark-gold transition-colors">About</a>
+              <a href="#/programs" className="hover:text-tark-gold transition-colors">Programs</a>
+              <a href="#/journey" className="hover:text-tark-gold transition-colors">Events</a>
+              <a href="#/impact" className="hover:text-tark-gold transition-colors">Impact</a>
+              <a href="#/origin#team" className="hover:text-tark-gold transition-colors">Team</a>
+              <a href="#/contact" className="hover:text-tark-gold transition-colors">Contact</a>
+              <a href="#/contact" className="hover:text-tark-gold transition-colors">Become a Member</a>
             </div>
           </div>
 

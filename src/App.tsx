@@ -2,20 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { ReactLenis } from '@studio-freight/react-lenis';
 import { Loader } from './components/Loader';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { Ticker } from './components/Ticker';
-import { About } from './components/About';
-import { MissionVision } from './components/MissionVision';
-import { Principles } from './components/Principles';
-import { Programs } from './components/Programs';
-import { Team } from './components/Team';
-import { Timeline } from './components/Timeline';
-import { Advisors } from './components/Advisors';
-import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
+import { useRouter } from './lib/router';
+import { Home } from './pages/Home';
+import { OriginPage } from './pages/OriginPage';
+import { ProgramsPage } from './pages/ProgramsPage';
 
 export function App() {
   const [loading, setLoading] = useState(true);
+  const route = useRouter();
 
   // Prevent scrolling while loading
   useEffect(() => {
@@ -28,6 +23,41 @@ export function App() {
       document.body.style.overflow = 'unset';
     };
   }, [loading]);
+
+  // Handle smooth scrolling to deep-linked anchor tags on hash routes
+  useEffect(() => {
+    const validAnchors = ['#/principles', '#/journey', '#/contact', '#/impact'];
+    const currentHash = window.location.hash;
+    
+    if (validAnchors.includes(currentHash) || currentHash.includes('#/origin#')) {
+      let id = '';
+      if (currentHash.includes('#/origin#')) {
+        id = currentHash.split('#/origin#')[1];
+      } else {
+        id = currentHash.replace('#/', '');
+      }
+      
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 200); // 200ms delay to let the page component mount
+      }
+    } else if (currentHash === '#/' || !currentHash) {
+      window.scrollTo({ top: 0 });
+    }
+  }, [route]);
+
+  // Routing switch
+  const renderPage = () => {
+    if (route.startsWith('#/origin')) {
+      return <OriginPage />;
+    }
+    if (route.startsWith('#/programs')) {
+      return <ProgramsPage />;
+    }
+    return <Home />;
+  };
 
   return (
     <ReactLenis
@@ -44,16 +74,7 @@ export function App() {
         <Navbar />
 
         <main>
-          <Hero />
-          <Ticker />
-          <About />
-          <MissionVision />
-          <Principles />
-          <Programs />
-          <Team />
-          <Timeline />
-          <Advisors />
-          <CTA />
+          {renderPage()}
         </main>
 
         <Footer />

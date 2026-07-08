@@ -4,11 +4,11 @@ import { ArrowRight } from 'lucide-react';
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-tark-bg pt-36 pb-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-tark-bg pt-28 pb-32 lg:pb-40">
       {/* Background radial gradient to add depth */}
       <div className="absolute inset-0 bg-gradient-radial from-tark-gold/5 via-transparent to-transparent opacity-70 pointer-events-none" />
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 -mt-12 lg:-mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
           {/* Left Column: Text Content */}
@@ -16,26 +16,8 @@ export const Hero = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5 text-left"
+            className="lg:col-span-5 text-left lg:-mt-72"
           >
-            {/* TARK Foundation Brand Signature */}
-            <div className="flex items-center gap-4 mb-8">
-              <img src="/logo.png" alt="TARK Logo" className="h-16 w-auto" style={{ filter: 'brightness(0) saturate(100%) invert(13%) sepia(35%) saturate(3048%) hue-rotate(204deg) brightness(91%) contrast(98%)' }} />
-              <div className="flex flex-col">
-                <span className="font-serif font-bold text-3xl md:text-4xl text-tark-navy leading-none">
-                  TARK
-                </span>
-                <span className="font-sans text-xs md:text-sm uppercase tracking-[0.25em] font-bold text-tark-gold mt-1.5">
-                  Foundation
-                </span>
-              </div>
-            </div>
-
-            <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-tark-gold/15 text-tark-navy text-xs font-semibold mb-8 tracking-wider uppercase border border-tark-gold/20">
-              <span className="w-2 h-2 rounded-full bg-tark-gold animate-pulse"></span>
-              Building Rational Leaders Since 2026
-            </span>
-
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif text-tark-navy mb-6 leading-[1.1] tracking-tight">
               Before You Can Lead, <br />
               You Must Learn to <span className="text-tark-blue italic font-medium">Think.</span>
@@ -68,7 +50,7 @@ export const Hero = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="lg:col-span-7 relative"
+            className="lg:col-span-7 relative lg:mt-32"
           >
             <div className="relative w-full max-w-lg mx-auto lg:max-w-none">
 

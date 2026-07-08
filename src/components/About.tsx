@@ -58,8 +58,8 @@ export const About = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl font-serif text-tark-navy leading-tight"
           >
-            Before You Can Lead, <br className="hidden md:block" />
-            You Must Learn to <span className="text-tark-blue italic font-medium">Think.</span>
+            Cultivating the Discipline of <br className="hidden md:block" />
+            <span className="text-tark-blue italic font-medium">Reasoned Leadership.</span>
           </motion.h2>
         </div>
 
@@ -140,12 +140,6 @@ export const About = () => {
               <p>
                 We believe leadership is not a title earned at the end of a competition but a discipline built through preparation, thoughtful reasoning, respectful disagreement, and intellectual honesty.
               </p>
-              <p>
-                TARK serves as a training ground where students learn to question assumptions, examine evidence, defend ideas with confidence, and develop empathy by listening to opposing viewpoints.
-              </p>
-              <p className="italic font-semibold text-tark-navy">
-                Rather than simply teaching students how to speak, we prepare them to think before they lead.
-              </p>
             </div>
 
             {/* Custom Progress Bars */}
@@ -158,7 +152,7 @@ export const About = () => {
             {/* CTA Button */}
             <div className="pt-2">
               <a
-                href="#journey"
+                href="#/origin"
                 className="group inline-flex items-center gap-2 bg-tark-navy text-white px-8 py-3.5 rounded-full font-medium hover:bg-tark-gold hover:text-tark-navy transition-all duration-300 shadow-md text-sm"
               >
                 Read Our Story

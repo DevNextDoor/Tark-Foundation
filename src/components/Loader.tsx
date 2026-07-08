@@ -20,7 +20,7 @@ export const Loader = ({ onComplete }: {onComplete: () => void;}) => {
       <motion.img
         src="/logo.png"
         alt="TARK Logo"
-        className="w-32 h-auto"
+        className="w-32 h-auto brightness-0 invert"
         initial={{
           opacity: 0,
           scale: 0.8

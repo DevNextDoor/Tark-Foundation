@@ -77,10 +77,10 @@ export const Programs = () => {
             transition={{ delay: 0.2 }}
           >
             <a
-              href="#journey"
+              href="#/programs"
               className="group inline-flex items-center gap-2 bg-white text-tark-navy px-8 py-3.5 rounded-full font-semibold hover:bg-tark-gold transition-all duration-300 shadow-md text-sm"
             >
-              View Our Journey
+              Explore Programs
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </motion.div>
@@ -89,81 +89,6 @@ export const Programs = () => {
         {/* 3-Column Custom Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {primaryPrograms.map((program, index) => {
-            if (program.isActive) {
-              // Active Gold Card Layout (Text top, Image bottom)
-              return (
-                <motion.div
-                  key={program.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group bg-tark-gold text-tark-navy p-8 rounded-3xl shadow-2xl flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300 relative border border-tark-gold/30"
-                >
-                  <div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-tark-navy/60 block mb-2">Featured Program</span>
-                    <h3 className="text-2xl font-serif font-bold text-tark-navy mb-4">
-                      {program.title}
-                    </h3>
-                    <p className="text-tark-navy/90 text-sm leading-relaxed mb-4 font-light">
-                      {program.description}
-                    </p>
-
-                    {program.objectives && (
-                      <div className="mb-4">
-                        <span className="text-[10px] uppercase font-bold tracking-wider text-tark-navy/70 block mb-1">Objectives:</span>
-                        <ul className="text-xs text-tark-navy/90 list-disc pl-4 space-y-0.5">
-                          {program.objectives.map((obj, i) => <li key={i}>{obj}</li>)}
-                        </ul>
-                      </div>
-                    )}
-
-                    {program.committees && (
-                      <div className="mb-4">
-                        <span className="text-[10px] uppercase font-bold tracking-wider text-tark-navy/70 block mb-1.5">Committees:</span>
-                        <div className="flex flex-wrap gap-1">
-                          {program.committees.map((com, i) => (
-                            <span key={i} className="text-[9px] bg-tark-navy/10 border border-tark-navy/20 px-2 py-0.5 rounded font-semibold">{com}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {program.impact && (
-                      <div className="mb-4">
-                        <span className="text-[10px] uppercase font-bold tracking-wider text-tark-navy/70 block mb-1">Impact:</span>
-                        <p className="text-xs text-tark-navy/95 leading-relaxed font-light">{program.impact}</p>
-                      </div>
-                    )}
-                  </div>
-
-                  <div>
-                    <div className="aspect-[2] w-full rounded-2xl overflow-hidden mt-4 shadow-inner border border-tark-navy/10">
-                      <img
-                        src={program.image}
-                        alt={program.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-
-                    <div className="mt-6 pt-4 border-t border-tark-navy/10 flex items-center justify-between">
-                      <a
-                        href="#contact"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-tark-navy hover:gap-2.5 transition-all"
-                      >
-                        Learn more
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </a>
-                      <div className="w-8 h-8 rounded-full bg-tark-navy/10 flex items-center justify-center">
-                        <program.icon className="w-4 h-4 text-tark-navy" />
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            }
-
-            // Standard Dark Card Layout (Image top, Content middle, Title bottom)
             return (
               <motion.div
                 key={program.id}
@@ -171,10 +96,10 @@ export const Programs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:bg-white/10 hover:-translate-y-1 transition-all duration-300"
+                className="group bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:bg-tark-gold hover:border-tark-gold hover:-translate-y-1 transition-all duration-300"
               >
                 <div>
-                  <div className="aspect-[2] w-full rounded-2xl overflow-hidden shadow-md mb-6">
+                  <div className="aspect-[2] w-full rounded-2xl overflow-hidden shadow-md mb-6 border border-white/5 group-hover:border-tark-navy/20 transition-colors">
                     <img
                       src={program.image}
                       alt={program.title}
@@ -182,32 +107,46 @@ export const Programs = () => {
                     />
                   </div>
 
+                  {program.isActive && (
+                    <span className="text-[9px] uppercase font-bold tracking-widest text-tark-gold bg-tark-gold/10 px-2 py-0.5 rounded border border-tark-gold/20 inline-block mb-3 group-hover:bg-tark-navy/10 group-hover:text-tark-navy group-hover:border-tark-navy/20 transition-colors">Featured Program</span>
+                  )}
                   {program.isFuture && (
-                    <span className="text-[9px] uppercase font-bold tracking-widest text-tark-gold bg-tark-gold/10 px-2 py-0.5 rounded border border-tark-gold/20 inline-block mb-3">Coming Soon</span>
+                    <span className="text-[9px] uppercase font-bold tracking-widest text-tark-gold bg-tark-gold/10 px-2 py-0.5 rounded border border-tark-gold/20 inline-block mb-3 group-hover:bg-tark-navy/10 group-hover:text-tark-navy group-hover:border-tark-navy/20 transition-colors">Coming Soon</span>
                   )}
 
-                  <h3 className="text-xl font-serif font-semibold text-white mb-3">
+                  <h3 className="text-xl font-serif font-semibold text-white group-hover:text-tark-navy mb-3 transition-colors">
                     {program.title}
                   </h3>
-                  <p className="text-gray-400 text-xs font-light leading-relaxed mb-4">
+                  <p className="text-gray-400 group-hover:text-tark-navy/90 text-xs font-light leading-relaxed mb-4 transition-colors">
                     {program.description}
                   </p>
 
                   {program.objectives && (
                     <div className="mb-4">
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-tark-gold/80 block mb-1">Objectives:</span>
-                      <ul className="text-xs text-gray-300 list-disc pl-4 space-y-0.5">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-tark-gold/80 group-hover:text-tark-navy/70 block mb-1 transition-colors">Objectives:</span>
+                      <ul className="text-xs text-gray-300 group-hover:text-tark-navy/90 list-disc pl-4 space-y-0.5 transition-colors">
                         {program.objectives.map((obj, i) => <li key={i}>{obj}</li>)}
                       </ul>
                     </div>
                   )}
 
+                  {program.committees && (
+                    <div className="mb-4">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-tark-gold/80 group-hover:text-tark-navy/70 block mb-1.5 transition-colors">Committees:</span>
+                      <div className="flex flex-wrap gap-1">
+                        {program.committees.map((com, i) => (
+                          <span key={i} className="text-[9px] bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-300 group-hover:bg-tark-navy/10 group-hover:border-tark-navy/20 group-hover:text-tark-navy font-semibold transition-colors">{com}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {program.topics && (
                     <div className="mb-4">
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-tark-gold/80 block mb-1.5">Sample Topics:</span>
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-tark-gold/80 group-hover:text-tark-navy/70 block mb-1.5 transition-colors">Sample Topics:</span>
                       <div className="flex flex-wrap gap-1">
                         {program.topics.map((top, i) => (
-                          <span key={i} className="text-[9px] bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-300">{top}</span>
+                          <span key={i} className="text-[9px] bg-white/5 border border-white/10 px-2 py-0.5 rounded text-gray-300 group-hover:bg-tark-navy/10 group-hover:border-tark-navy/20 group-hover:text-tark-navy font-semibold transition-colors">{top}</span>
                         ))}
                       </div>
                     </div>
@@ -215,27 +154,34 @@ export const Programs = () => {
 
                   {program.upcoming && (
                     <div className="mb-4">
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-tark-gold/80 block mb-2">Initiatives:</span>
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-tark-gold/80 group-hover:text-tark-navy/70 block mb-2 transition-colors">Initiatives:</span>
                       <div className="grid grid-cols-2 gap-2">
                         {program.upcoming.map((init, i) => (
-                          <div key={i} className="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1.5 rounded-lg text-gray-300 font-medium text-center">
+                          <div key={i} className="text-[10px] bg-white/5 border border-white/10 px-2.5 py-1.5 rounded-lg text-gray-300 group-hover:bg-tark-navy/10 group-hover:border-tark-navy/20 group-hover:text-tark-navy font-semibold text-center transition-colors">
                             {init}
                           </div>
                         ))}
                       </div>
                     </div>
                   )}
+                  
+                  {program.impact && (
+                    <div className="mb-4">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-tark-gold/80 group-hover:text-tark-navy/70 block mb-1 transition-colors">Impact:</span>
+                      <p className="text-xs text-gray-300 group-hover:text-tark-navy/95 leading-relaxed font-light transition-colors">{program.impact}</p>
+                    </div>
+                  )}
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-white/10 group-hover:border-tark-navy/10 flex items-center justify-between transition-colors">
                   <a
                     href="#contact"
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-tark-gold hover:gap-2.5 transition-all"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-tark-gold group-hover:text-tark-navy hover:gap-2.5 transition-all"
                   >
                     Learn more
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
-                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-tark-gold group-hover:text-tark-navy transition-colors">
+                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-tark-navy/10 transition-colors">
                     <program.icon className="w-4 h-4 text-white group-hover:text-tark-navy" />
                   </div>
                 </div>

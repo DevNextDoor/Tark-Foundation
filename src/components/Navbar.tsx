@@ -2,33 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram, Youtube, Menu, X } from 'lucide-react';
+import { useRouter } from '../lib/router';
 
 const links = [
-  {
-    name: 'About',
-    href: '#about'
-  },
-  {
-    name: 'Principles',
-    href: '#principles'
-  },
-  {
-    name: 'Programs',
-    href: '#programs'
-  },
-  {
-    name: 'Team',
-    href: '#team'
-  },
-  {
-    name: 'Journey',
-    href: '#journey'
-  }
+  { name: 'Home', href: '#/' },
+  { name: 'About', href: '#/origin' },
+  { name: 'Principles', href: '#/principles' },
+  { name: 'Programs', href: '#/programs' },
+  { name: 'Team', href: '#/origin#team' },
+  { name: 'Journey', href: '#/journey' }
 ];
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { path } = useRouter();
+
+  // Home page has a light background at the very top. Other pages have dark navy backgrounds.
+  const isLightTop = path === '/' || path === '';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,12 +83,18 @@ export const Navbar = () => {
           scrolled ? 'py-4' : 'py-6'
         )}
       >
-        <a href="#" className="flex items-center gap-2">
+        <a href="#/" className="flex items-center gap-2">
           <img
             src="/logo.png"
             alt="TARK"
             className="h-8 w-auto transition-all duration-300"
-            style={{ filter: scrolled || isOpen ? 'none' : 'brightness(0) saturate(100%) invert(13%) sepia(35%) saturate(3048%) hue-rotate(204deg) brightness(91%) contrast(98%)' }}
+            style={{ 
+              filter: scrolled || isOpen 
+                ? 'none' // Navy Logo when scrolled/open
+                : isLightTop 
+                  ? 'brightness(0) saturate(100%) invert(13%) sepia(35%) saturate(3048%) hue-rotate(204deg) brightness(91%) contrast(98%)' // Navy Logo on Light Hero
+                  : 'brightness(0) invert(1)' // White Logo on Dark Hero
+            }}
           />
         </a>
 
@@ -109,14 +106,18 @@ export const Navbar = () => {
               href={link.href}
               className={cn(
                 'text-sm font-medium transition-colors hover:text-tark-gold',
-                scrolled ? 'text-tark-navy' : 'text-tark-navy/80 hover:text-tark-navy'
+                scrolled 
+                  ? 'text-tark-navy' 
+                  : isLightTop 
+                    ? 'text-tark-navy/80 hover:text-tark-navy' // Dark links on light background
+                    : 'text-white/90 hover:text-white' // White links on dark background
               )}
             >
               {link.name}
             </a>
           ))}
           <a
-            href="#contact"
+            href="#/contact"
             className={cn(
               'px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-sm',
               scrolled ?
@@ -156,7 +157,7 @@ export const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contact"
+            href="#/contact"
             onClick={() => setIsOpen(false)}
             className="w-full text-center bg-tark-navy text-white py-3 rounded-full text-sm font-semibold hover:bg-tark-blue transition-colors mt-2 block shadow-sm"
           >
