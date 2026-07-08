@@ -2,12 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const items = [
-  'Mock Trials',
-  'Moot Courts',
-  'Mock Debates',
-  'Legal Workshops',
-  'Research Fellowships',
-  'Leadership Programs'
+  'Youth Parliaments',
+  'Debate Competitions',
+  'Policy Workshops',
+  'Diplomacy Sim',
+  'Civic Responsibility',
+  'Leadership Bootcamps'
 ];
 
 export const Ticker = () => {

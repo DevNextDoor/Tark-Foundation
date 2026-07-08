@@ -33,18 +33,16 @@ export const Hero = () => {
 
             <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-tark-gold/15 text-tark-navy text-xs font-semibold mb-8 tracking-wider uppercase border border-tark-gold/20">
               <span className="w-2 h-2 rounded-full bg-tark-gold animate-pulse"></span>
-              The Association for Rationalism and Knowledge
+              Building Rational Leaders Since 2026
             </span>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif text-tark-navy mb-6 leading-[1.1] tracking-tight">
-              Where Arguments <br />
-              <span className="text-tark-blue italic font-medium">Become Advocacy.</span>
+              Before You Can Lead, <br />
+              You Must Learn to <span className="text-tark-blue italic font-medium">Think.</span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-600 mb-10 max-w-xl font-light leading-relaxed">
-              TARK empowers aspiring legal professionals through experiential
-              learning, mock trials, moot courts, debates, constitutional
-              awareness, research and leadership development.
+              Every generation inherits a world it did not build and is expected to improve it. TARK Foundation creates immersive learning platforms where students develop critical thinking, rational argumentation, leadership, diplomacy, and civic responsibility through debates, youth parliaments, workshops, and experiential learning.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-6">
@@ -56,10 +54,10 @@ export const Hero = () => {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#contact"
+                href="#about"
                 className="group flex items-center gap-1.5 font-semibold text-tark-navy hover:text-tark-blue transition-colors w-full sm:w-auto justify-center text-sm"
               >
-                Become a Member
+                Discover Our Story
                 <ArrowRight className="w-4 h-4 opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
               </a>
             </div>

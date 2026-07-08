@@ -9,8 +9,16 @@ const links = [
     href: '#about'
   },
   {
+    name: 'Principles',
+    href: '#principles'
+  },
+  {
     name: 'Programs',
     href: '#programs'
+  },
+  {
+    name: 'Team',
+    href: '#team'
   },
   {
     name: 'Journey',

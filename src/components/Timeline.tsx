@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 const steps = [
-'Register',
-'Learn the Case',
-'Research',
-'Draft Arguments',
-'Courtroom Simulation',
-'Present Arguments',
-'Judgment',
-'Recognition',
-'Future Advocate'];
+  'Register',
+  'Committee Allocation',
+  'Research',
+  'Debate',
+  'Deliberation',
+  'Leadership',
+  'Networking',
+  'Recognition'
+];
 
 export const Timeline = () => {
   return (
@@ -33,7 +33,7 @@ export const Timeline = () => {
             }}
             className="text-4xl md:text-5xl font-serif mb-6">
             
-            Journey of an Advocate
+            Journey at TARK
           </motion.h2>
           <motion.p
             initial={{
@@ -52,8 +52,7 @@ export const Timeline = () => {
             }}
             className="text-lg text-gray-300 font-light">
             
-            A structured path from theoretical understanding to practical
-            mastery.
+            A structured roadmap guiding participants from registration through deep research and debate to rational leadership and networking.
           </motion.p>
         </div>
 

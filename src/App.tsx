@@ -5,8 +5,12 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Ticker } from './components/Ticker';
 import { About } from './components/About';
+import { MissionVision } from './components/MissionVision';
+import { Principles } from './components/Principles';
 import { Programs } from './components/Programs';
+import { Team } from './components/Team';
 import { Timeline } from './components/Timeline';
+import { Advisors } from './components/Advisors';
 import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
 
@@ -43,8 +47,12 @@ export function App() {
           <Hero />
           <Ticker />
           <About />
+          <MissionVision />
+          <Principles />
           <Programs />
+          <Team />
           <Timeline />
+          <Advisors />
           <CTA />
         </main>
 

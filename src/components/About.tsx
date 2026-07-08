@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const stats = [
-  { value: '5000+', label: 'Students' },
-  { value: '100+', label: 'Events' },
-  { value: '50+', label: 'Institutions' },
-  { value: '25+', label: 'Mentors' }
+  { value: '5000+', label: 'Students Engaged' },
+  { value: '100+', label: 'Educational Institutions' },
+  { value: '50+', label: 'Programs Conducted' },
+  { value: '25+', label: 'Strategic Partners' }
 ];
 
 const ProgressBar = ({ label, percentage }: { label: string; percentage: number }) => {
@@ -48,7 +48,7 @@ export const About = () => {
               <span className="w-1.5 h-3 bg-tark-gold rounded-l-full block"></span>
               <span className="w-1.5 h-3 bg-tark-navy rounded-r-full block"></span>
             </div>
-            <span>About Us</span>
+            <span>Our Origin</span>
           </motion.div>
 
           <motion.h2
@@ -58,8 +58,8 @@ export const About = () => {
             transition={{ delay: 0.1 }}
             className="text-3xl md:text-5xl font-serif text-tark-navy leading-tight"
           >
-            At TARK We Believe Legal Education Extends <br className="hidden md:block" />
-            <span className="text-tark-blue italic font-medium">Beyond Classrooms.</span>
+            Before You Can Lead, <br className="hidden md:block" />
+            You Must Learn to <span className="text-tark-blue italic font-medium">Think.</span>
           </motion.h2>
         </div>
 
@@ -128,28 +128,40 @@ export const About = () => {
             initial={{ opacity: 0, x: 35 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-6 space-y-8"
+            className="lg:col-span-6 space-y-6"
           >
-            <p className="text-gray-600 leading-relaxed font-light text-lg">
-              Through immersive simulations, structured debates, courtroom advocacy, constitutional
-              discourse and expert mentorship, we prepare future legal professionals with confidence,
-              ethics and practical skills. We bridge the gap between academic theory and active practice.
-            </p>
+            <div className="space-y-4 text-gray-600 leading-relaxed font-light text-base">
+              <p>
+                Every generation inherits a world it did not build and is asked to improve it. Yet today’s young people are surrounded by information while having fewer opportunities for meaningful dialogue and rational discussion.
+              </p>
+              <p className="font-semibold text-tark-blue">
+                TARK Foundation was established to change that.
+              </p>
+              <p>
+                We believe leadership is not a title earned at the end of a competition but a discipline built through preparation, thoughtful reasoning, respectful disagreement, and intellectual honesty.
+              </p>
+              <p>
+                TARK serves as a training ground where students learn to question assumptions, examine evidence, defend ideas with confidence, and develop empathy by listening to opposing viewpoints.
+              </p>
+              <p className="italic font-semibold text-tark-navy">
+                Rather than simply teaching students how to speak, we prepare them to think before they lead.
+              </p>
+            </div>
 
             {/* Custom Progress Bars */}
-            <div className="space-y-6">
-              <ProgressBar label="Advocacy & Mooting" percentage={95} />
-              <ProgressBar label="Constitutional Awareness" percentage={90} />
-              <ProgressBar label="Research & Ethics" percentage={85} />
+            <div className="space-y-4 pt-2">
+              <ProgressBar label="Critical Thinking" percentage={95} />
+              <ProgressBar label="Rational Argumentation" percentage={90} />
+              <ProgressBar label="Diplomacy & Leadership" percentage={85} />
             </div>
 
             {/* CTA Button */}
-            <div className="pt-4">
+            <div className="pt-2">
               <a
                 href="#journey"
-                className="group inline-flex items-center gap-2 bg-tark-navy text-white px-8 py-3.5 rounded-full font-medium hover:bg-tark-gold hover:text-tark-navy transition-all duration-300 shadow-md"
+                className="group inline-flex items-center gap-2 bg-tark-navy text-white px-8 py-3.5 rounded-full font-medium hover:bg-tark-gold hover:text-tark-navy transition-all duration-300 shadow-md text-sm"
               >
-                Our Journey
+                Read Our Story
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
@@ -158,7 +170,13 @@ export const About = () => {
         </div>
 
         {/* Stats Row (Bottom of Section) */}
-        <div className="mt-28 border-t border-gray-100 pt-16">
+        <div id="impact" className="mt-28 border-t border-gray-100 pt-16 scroll-mt-24">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h3 className="text-2xl font-serif text-tark-navy mb-4">Our Impact</h3>
+            <p className="text-gray-600 leading-relaxed font-light text-base max-w-2xl mx-auto">
+              Our impact is measured not simply through numbers but through the confidence students build, the quality of ideas they develop, and the communities they strengthen. Every event helps participants become more thoughtful, informed, and responsible citizens.
+            </p>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-6">
             {stats.map((stat, index) => (
               <motion.div
