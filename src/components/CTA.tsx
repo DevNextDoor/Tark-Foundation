@@ -29,7 +29,7 @@ export const CTA = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
-              href="#programs"
+              href="/programs"
               className="inline-block bg-tark-gold text-tark-navy px-8 py-4 rounded-full font-semibold hover:bg-white transition-colors shadow-xl text-sm w-full sm:w-auto">
               Explore Programs
             </a>

@@ -29,7 +29,7 @@ export const OriginPage = () => {
         <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-5xl mx-auto">
             {/* Back Button */}
-            <a href="#/" className="inline-flex items-center gap-2 text-tark-navy hover:text-tark-blue font-semibold mb-12 group transition-colors">
+            <a href="/" className="inline-flex items-center gap-2 text-tark-navy hover:text-tark-blue font-semibold mb-12 group transition-colors">
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
               Back to Home
             </a>

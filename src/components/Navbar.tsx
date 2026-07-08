@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../lib/utils';
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Instagram, Youtube, Menu, X } from 'lucide-react';
 import { useRouter } from '../lib/router';
+import { Link, NavLink } from 'react-router-dom';
 
 const links = [
-  { name: 'Home', href: '#/' },
-  { name: 'About', href: '#/origin' },
-  { name: 'Principles', href: '#/principles' },
-  { name: 'Programs', href: '#/programs' },
-  { name: 'Team', href: '#/origin#team' },
-  { name: 'Journey', href: '#/journey' }
+  { name: 'Home', to: '/' },
+  { name: 'About', to: '/origin' },
+  { name: 'Principles', to: '/#principles' },
+  { name: 'Programs', to: '/programs' },
+  { name: 'Team', to: '/origin#team' },
+  { name: 'Journey', to: '/#journey' }
 ];
 
 export const Navbar = () => {
@@ -52,9 +53,9 @@ export const Navbar = () => {
               <Phone className="w-3.5 h-3.5 text-tark-gold" />
               <span>+91 (000) 000-0000</span>
             </a>
-            <a href="mailto:info@tarklegal.org" className="flex items-center gap-2 hover:text-tark-gold transition-colors">
+            <a href="mailto:info@tarkfoundation.in" className="flex items-center gap-2 hover:text-tark-gold transition-colors">
               <Mail className="w-3.5 h-3.5 text-tark-gold" />
-              <span>info@tarklegal.org</span>
+              <span>info@tarkfoundation.in</span>
             </a>
             <div className="flex items-center gap-2 text-gray-300">
               <MapPin className="w-3.5 h-3.5 text-tark-gold" />
@@ -83,7 +84,7 @@ export const Navbar = () => {
           scrolled ? 'py-4' : 'py-6'
         )}
       >
-        <a href="#/" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img
             src="/logo.png"
             alt="TARK"
@@ -96,28 +97,29 @@ export const Navbar = () => {
                   : 'brightness(0) invert(1)' // White Logo on Dark Hero
             }}
           />
-        </a>
+        </Link>
 
         {/* Desktop Menu links */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <a
+            <NavLink
               key={link.name}
-              href={link.href}
-              className={cn(
+              to={link.to}
+              className={({ isActive }) => cn(
                 'text-sm font-medium transition-colors hover:text-tark-gold',
                 scrolled 
                   ? 'text-tark-navy' 
                   : isLightTop 
                     ? 'text-tark-navy/80 hover:text-tark-navy' // Dark links on light background
-                    : 'text-white/90 hover:text-white' // White links on dark background
+                    : 'text-white/90 hover:text-white', // White links on dark background
+                isActive ? 'font-semibold' : ''
               )}
             >
               {link.name}
-            </a>
+            </NavLink>
           ))}
-          <a
-            href="#/contact"
+          <NavLink 
+            to="/contact"
             className={cn(
               'px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-sm',
               scrolled ?
@@ -126,7 +128,7 @@ export const Navbar = () => {
             )}
           >
             Become a Member
-          </a>
+          </NavLink>
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -147,22 +149,22 @@ export const Navbar = () => {
       >
         <div className="px-6 py-6 flex flex-col gap-4 shadow-inner">
           {links.map((link) => (
-            <a
+            <NavLink
               key={link.name}
-              href={link.href}
+              to={link.to}
               onClick={() => setIsOpen(false)}
               className="text-sm font-medium text-tark-navy hover:text-tark-gold transition-colors py-1"
             >
               {link.name}
-            </a>
+            </NavLink>
           ))}
-          <a
-            href="#/contact"
+          <NavLink
+            to="/contact"
             onClick={() => setIsOpen(false)}
             className="w-full text-center bg-tark-navy text-white py-3 rounded-full text-sm font-semibold hover:bg-tark-blue transition-colors mt-2 block shadow-sm"
           >
             Become a Member
-          </a>
+          </NavLink>
         </div>
       </motion.div>
     </motion.header>

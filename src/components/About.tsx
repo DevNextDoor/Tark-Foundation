@@ -152,7 +152,7 @@ export const About = () => {
             {/* CTA Button */}
             <div className="pt-2">
               <a
-                href="#/origin"
+                href="/origin"
                 className="group inline-flex items-center gap-2 bg-tark-navy text-white px-8 py-3.5 rounded-full font-medium hover:bg-tark-gold hover:text-tark-navy transition-all duration-300 shadow-md text-sm"
               >
                 Read Our Story

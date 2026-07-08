@@ -29,14 +29,14 @@ export const Hero = () => {
 
             <div className="flex flex-col sm:flex-row items-center gap-6">
               <a
-                href="#programs"
+                href="/programs"
                 className="group flex items-center gap-2 bg-tark-navy text-white px-8 py-4 rounded-full font-medium hover:bg-tark-gold hover:text-tark-navy transition-all duration-300 shadow-md w-full sm:w-auto justify-center"
               >
                 Explore Programs
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#about"
+                href="/origin"
                 className="group flex items-center gap-1.5 font-semibold text-tark-navy hover:text-tark-blue transition-colors w-full sm:w-auto justify-center text-sm"
               >
                 Discover Our Story

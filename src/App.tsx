@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ReactLenis } from '@studio-freight/react-lenis';
 import { Loader } from './components/Loader';
 import { Navbar } from './components/Navbar';
+import { EventBanner } from './components/EventBanner';
 import { Footer } from './components/Footer';
-import { useRouter } from './lib/router';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { OriginPage } from './pages/OriginPage';
 import { ProgramsPage } from './pages/ProgramsPage';
 
 export function App() {
   const [loading, setLoading] = useState(true);
-  const route = useRouter();
+  const location = useLocation();
 
   // Prevent scrolling while loading
   useEffect(() => {
@@ -24,40 +25,23 @@ export function App() {
     };
   }, [loading]);
 
-  // Handle smooth scrolling to deep-linked anchor tags on hash routes
+  // Handle smooth scrolling to deep-linked anchor tags on routes with hashes
   useEffect(() => {
-    const validAnchors = ['#/principles', '#/journey', '#/contact', '#/impact'];
-    const currentHash = window.location.hash;
-    
-    if (validAnchors.includes(currentHash) || currentHash.includes('#/origin#')) {
-      let id = '';
-      if (currentHash.includes('#/origin#')) {
-        id = currentHash.split('#/origin#')[1];
-      } else {
-        id = currentHash.replace('#/', '');
-      }
-      
+    const validAnchors = ['#principles', '#journey', '#contact', '#impact'];
+    const currentHash = location.hash || '';
+
+    if (validAnchors.includes(currentHash) || (location.pathname === '/origin' && currentHash)) {
+      let id = currentHash.replace('#', '');
       const element = document.getElementById(id);
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
-        }, 200); // 200ms delay to let the page component mount
+        }, 200);
       }
-    } else if (currentHash === '#/' || !currentHash) {
+    } else if (!currentHash) {
       window.scrollTo({ top: 0 });
     }
-  }, [route]);
-
-  // Routing switch
-  const renderPage = () => {
-    if (route.startsWith('#/origin')) {
-      return <OriginPage />;
-    }
-    if (route.startsWith('#/programs')) {
-      return <ProgramsPage />;
-    }
-    return <Home />;
-  };
+  }, [location]);
 
   return (
     <ReactLenis
@@ -72,9 +56,14 @@ export function App() {
         {loading && <Loader onComplete={() => setLoading(false)} />}
 
         <Navbar />
+        <EventBanner />
 
         <main>
-          {renderPage()}
+          <Routes>
+            <Route path="/origin" element={<OriginPage />} />
+            <Route path="/programs" element={<ProgramsPage />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
         </main>
 
         <Footer />

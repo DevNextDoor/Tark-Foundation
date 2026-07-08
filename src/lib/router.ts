@@ -1,16 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const useRouter = () => {
-  const [route, setRoute] = useState(window.location.hash || '#/');
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const handleHashChange = () => {
-      setRoute(window.location.hash || '#/');
-    };
+  // route: pathname + hash (e.g. /origin#team)
+  const route = `${location.pathname}${location.hash || ''}`;
+  const path = location.pathname;
 
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  return route;
+  return { route, path, navigate, location };
 };

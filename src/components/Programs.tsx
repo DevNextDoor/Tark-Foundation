@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Landmark, MessageSquare, Plus } from 'lucide-react';
 
@@ -77,7 +76,7 @@ export const Programs = () => {
             transition={{ delay: 0.2 }}
           >
             <a
-              href="#/programs"
+              href="/programs"
               className="group inline-flex items-center gap-2 bg-white text-tark-navy px-8 py-3.5 rounded-full font-semibold hover:bg-tark-gold transition-all duration-300 shadow-md text-sm"
             >
               Explore Programs
@@ -175,7 +174,7 @@ export const Programs = () => {
 
                 <div className="mt-6 pt-4 border-t border-white/10 group-hover:border-tark-navy/10 flex items-center justify-between transition-colors">
                   <a
-                    href="#contact"
+                    href="/contact"
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-tark-gold group-hover:text-tark-navy hover:gap-2.5 transition-all"
                   >
                     Learn more
