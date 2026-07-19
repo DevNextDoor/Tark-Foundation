@@ -53,9 +53,9 @@ export const Navbar = () => {
               <Phone className="w-3.5 h-3.5 text-tark-gold" />
               <span>+91 (000) 000-0000</span>
             </a>
-            <a href="mailto:info@tarkfoundation.in" className="flex items-center gap-2 hover:text-tark-gold transition-colors">
+            <a href="mailto:info@tarkfoundationindia.com" className="flex items-center gap-2 hover:text-tark-gold transition-colors">
               <Mail className="w-3.5 h-3.5 text-tark-gold" />
-              <span>info@tarkfoundation.in</span>
+              <span>info@tarkfoundationindia.com</span>
             </a>
             <div className="flex items-center gap-2 text-gray-300">
               <MapPin className="w-3.5 h-3.5 text-tark-gold" />

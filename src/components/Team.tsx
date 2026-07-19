@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, Award, UserCheck, Users, HelpCircle } from 'lucide-react';
 
