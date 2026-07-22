@@ -118,17 +118,19 @@ export const Navbar = () => {
               {link.name}
             </NavLink>
           ))}
-          <NavLink 
-            to="/contact"
+          <a 
+            href="https://docs.google.com/forms/d/1_U9yrtF3Ys-hQTepeKk-ZLETnCDGIiXM3vlZJrQOsb0/edit?ts=6a17a5ca" 
+            target="_blank" 
+            rel="noopener noreferrer"
             className={cn(
-              'px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-sm',
+              'inline-block px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-sm',
               scrolled ?
                 'bg-tark-navy text-white hover:bg-tark-blue' :
                 'bg-tark-gold text-tark-navy hover:bg-white hover:text-tark-navy'
             )}
           >
             Become a Member
-          </NavLink>
+          </a>
         </div>
 
         {/* Mobile Hamburger Button */}
