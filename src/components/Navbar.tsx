@@ -49,9 +49,9 @@ export const Navbar = () => {
       >
         <div className="container mx-auto px-6 md:px-12 h-full flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <a href="tel:+910000000000" className="flex items-center gap-2 hover:text-tark-gold transition-colors">
+            <a href="tel:+917042737734" className="flex items-center gap-2 hover:text-tark-gold transition-colors">
               <Phone className="w-3.5 h-3.5 text-tark-gold" />
-              <span>+91 (000) 000-0000</span>
+              <span>+91 70427 37734</span>
             </a>
             <a href="mailto:info@tarkfoundationindia.com" className="flex items-center gap-2 hover:text-tark-gold transition-colors">
               <Mail className="w-3.5 h-3.5 text-tark-gold" />
