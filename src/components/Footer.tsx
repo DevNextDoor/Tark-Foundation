@@ -27,7 +27,7 @@ export const Footer = () => {
               <a href="/#impact" className="hover:text-tark-gold transition-colors">Impact</a>
               <a href="/origin#team" className="hover:text-tark-gold transition-colors">Team</a>
               <a href="/#contact" className="hover:text-tark-gold transition-colors">Contact</a>
-              <a href="#/contact" className="hover:text-tark-gold transition-colors">Become a Member</a>
+              <a href="https://docs.google.com/forms/d/1_U9yrtF3Ys-hQTepeKk-ZLETnCDGIiXM3vlZJrQOsb0/edit?ts=6a17a5ca" className="hover:text-tark-gold transition-colors">Become a Member</a>
             </div>
           </div>
 
