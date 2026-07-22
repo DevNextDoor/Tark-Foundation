@@ -3,30 +3,30 @@ import { motion } from 'framer-motion';
 import { User } from 'lucide-react';
 
 const advisors = [
-  {
-    name: 'Prof. Charles Vance',
-    role: 'Senior Academic Advisor',
-    institution: 'Former Dean of Law & Legal Philosophy Scholar',
-    imageBg: 'bg-tark-navy/10'
-  },
-  {
-    name: 'Hon. Justice Vikram Mehta',
-    role: 'Constitutional Mentor',
-    institution: 'Retd. High Court Judge & Judicial Lecturer',
-    imageBg: 'bg-tark-gold/10'
-  },
-  {
-    name: 'Dr. Ananya Sen',
-    role: 'Public Policy Advisor',
-    institution: 'Director of Policy Research & Governance Analyst',
-    imageBg: 'bg-tark-blue/10'
-  },
-  {
-    name: 'Ms. Sarah Jenkins',
-    role: 'Diplomacy & Advocacy Coach',
-    institution: 'International Relations Fellow & Rhetoric Coach',
-    imageBg: 'bg-tark-navy/10'
-  }
+  // {
+  //   name: 'Prof. Charles Vance',
+  //   role: 'Senior Academic Advisor',
+  //   institution: 'Former Dean of Law & Legal Philosophy Scholar',
+  //   imageBg: 'bg-tark-navy/10'
+  // },
+  // {
+  //   name: 'Hon. Justice Vikram Mehta',
+  //   role: 'Constitutional Mentor',
+  //   institution: 'Retd. High Court Judge & Judicial Lecturer',
+  //   imageBg: 'bg-tark-gold/10'
+  // },
+  // {
+  //   name: 'Dr. Ananya Sen',
+  //   role: 'Public Policy Advisor',
+  //   institution: 'Director of Policy Research & Governance Analyst',
+  //   imageBg: 'bg-tark-blue/10'
+  // },
+  // {
+  //   name: 'Ms. Sarah Jenkins',
+  //   role: 'Diplomacy & Advocacy Coach',
+  //   institution: 'International Relations Fellow & Rhetoric Coach',
+  //   imageBg: 'bg-tark-navy/10'
+  // }
 ];
 
 export const Advisors = () => {
